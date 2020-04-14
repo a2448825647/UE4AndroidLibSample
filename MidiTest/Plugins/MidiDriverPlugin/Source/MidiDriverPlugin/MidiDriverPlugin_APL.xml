@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root xmlns:android="http://schemas.android.com/apk/res/android">
+  <init>
+    <log text="[GZJ] MidiDriverPlugin_APL INIT"/>
+  </init>
+
+  <proguardAdditions>
+    <insert>
+    </insert>
+  </proguardAdditions>
+
+  <resourceCopies>
+    <copyFile  src = "$S(PluginDir)/../../Libs/Android/TestLib.jar"  dst = "$S(BuildDir)/libs/TestLib.jar" /> 
+  </resourceCopies>
+
+  <gameActivityImportAdditions>
+    <insert>
+import com.jisheng.testlib.*;
+    </insert>
+   </gameActivityImportAdditions>
+   <gameActivityClassAdditions>
+    <insert>
+public void TestFunc() {
+TestClass.TestFunc();
+}
+    </insert>
+   </gameActivityClassAdditions>
+</root>
